@@ -1,0 +1,73 @@
+.container {
+    background-image: linear-gradient(rgb(134, 228, 204),rgb(144, 219, 230));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2px;
+    right: 0;
+}
+
+h2{
+    margin-top: -16px;
+    padding-left: 50px;
+    color: rgb(41, 41, 65);
+}
+
+.row{
+    padding-left: 20px;
+}
+
+.form-label{
+    font-weight:bold;
+}
+
+.form-control{
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.btn{
+    margin-top: 10px;
+    margin-left: 2px;
+    color: rgb(11, 139, 161);
+    border: 1px solid rgb(11, 139, 161);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.alert{
+    color: green;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.message{
+    padding-left: 40px;
+    margin-bottom: 0;
+    font-weight:bold;
+}
+
+p{
+    padding-left: 20px;
+    font-weight:bold;
+}
+
+.small-container{
+    background-color: rgb(10, 122, 122);
+    padding: 20px;
+}
+
+.bi-box-arrow-in-left{
+    font-size:x-large;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.bi-check-circle-fill{
+    font-size:x-large;
+    font-weight:bold;
+}

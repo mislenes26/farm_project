@@ -1,0 +1,37 @@
+<div class="container">
+    <p class="bi bi-box-arrow-in-left" routerLink=""></p>
+    <h2><strong>Cadastro de Fazenda</strong></h2>
+    <div *ngIf="message_success" class="alert alert-success alert-dismissible fade show" role="alert">
+        <p class="message">
+            <i class="bi bi-check-circle-fill"></i>
+            <strong>
+                Fazenda salva com sucesso!
+            </strong>
+        </p>
+    </div>
+    <div class="small-container">
+    <form [formGroup]="newFarm" (ngSubmit)="SaveFarm()">
+        <div class="row">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" formControlName="name">        
+        </div>
+
+        <div class="row">
+            <label for="owner_id" class="form-label">ID do proprietário</label>
+            <input type="text" class="form-control" id="owner_id" formControlName="owner_id">        
+        </div>
+
+        <div>
+            <p (click)="draw('Circle')" style="cursor: pointer;">
+                Desenhar círculo
+                <i class="bi bi-brush"></i>
+            </p>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary" routerLink="">Cancelar</button>
+        </div>
+    </form>
+    </div>
+</div>

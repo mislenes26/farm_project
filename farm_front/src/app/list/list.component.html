@@ -1,0 +1,12 @@
+<div class="container">
+    <p class="bi bi-box-arrow-in-left" routerLink=""></p>
+    <h2><strong>Fazendas Cadastradas</strong></h2>
+    <nav>
+        <ul *ngFor="let element of dataFarm">
+            <li style="cursor: pointer;" routerLink="../details/{{element.id}}">
+                {{element.name}}
+                <i class="bi bi-card-text"></i>
+            </li>
+        </ul>
+    </nav>
+</div>

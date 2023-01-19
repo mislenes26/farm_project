@@ -1,0 +1,43 @@
+.container {
+    background-image: linear-gradient(rgb(134, 228, 204),rgb(144, 219, 230));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2px;
+    right: 0;
+}
+
+nav{
+    max-width: 370px;
+    width: 100%;
+    background-color: rgb(11, 139, 161);
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li{
+    background-color: rgb(10, 122, 122);
+    color: white;
+    padding: 10px;
+    display: block;
+    transition: background .5s;
+    border-bottom: 1px solid white;
+}
+
+nav ul li:hover {
+    background-color: white;
+    color: rgb(11, 139, 161);
+}
+
+.bi-box-arrow-in-left{
+    font-size:x-large;
+    margin-top: 10px;
+    padding-left: 10px;
+}

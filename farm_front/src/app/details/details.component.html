@@ -1,0 +1,21 @@
+<div *ngIf="object" class="container">
+  <p class="bi bi-box-arrow-in-left" routerLink=""></p>
+  <h2><strong>Detalhes</strong></h2>
+  <div class="small-container">
+    <nav>
+      <ul>
+        <li><strong>Nome:</strong> {{object.name}}</li>
+        <li><strong>Geometria:</strong> {{object.geometry}}</li>
+        <li><strong>Área:</strong> {{object.area}}</li>
+        <li><strong>Centroide:</strong> {{object.centroid}}</li>
+        <li><strong>ID do Proprietário:</strong> {{object.owner_id}}</li>
+      </ul>
+      <div class="buttons">
+        <button type="submit" routerLink="../../register/{{object.id}}" class="btn btn-primary">Editar</button>
+        <button type="submit" (click)="deleteFarm(object.id)" class="btn btn-primary">Deletar</button>
+        <button type="submit" routerLink="../../list" class="btn btn-primary">Cancelar</button>
+      </div>
+    </nav>
+  </div>
+</div>
+
