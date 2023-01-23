@@ -1,5 +1,7 @@
-from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import generics, filters
 
+from farm_base.api.v1.filters import FarmFilter
 from farm_base.api.v1.serializers import FarmListSerializer, \
     FarmCreateSerializer, FarmDetailSerializer
 from farm_base.models import Farm
@@ -8,6 +10,10 @@ from farm_base.models import Farm
 class FarmListCreateView(generics.ListCreateAPIView):
     queryset = Farm.objects.filter(is_active=True)
     serializer_class = FarmListSerializer
+    filter_backends = (DjangoFilterBackend,
+                       filters.OrderingFilter)
+    filterset_class = FarmFilter
+    search_fields = ['name', 'municipality', 'state']
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
@@ -20,7 +26,6 @@ class FarmListCreateView(generics.ListCreateAPIView):
         area = float(farm.geometry.area)
         centroid = farm.geometry.centroid
         serializer.save(area=area, centroid=centroid)
-
 
 class FarmRetrieveUpdateDestroyView(
     generics.RetrieveUpdateDestroyAPIView):

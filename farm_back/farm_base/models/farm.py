@@ -1,9 +1,19 @@
 from django.contrib.gis.db import models
 from django.utils.translation import gettext as _
-
+from django.db.models.constraints import CheckConstraint
+from django.db.models import Q
 
 class Farm(models.Model):
     name = models.CharField(verbose_name=_("Name"), max_length=255,
+                            null=True, blank=True)
+
+    municipality = models.CharField(verbose_name=_("Municipality"), max_length=255,
+                            null=True, blank=True)
+    
+    state = models.CharField(verbose_name=_("State"), max_length=255,
+                            null=True, blank=True)
+    
+    owner = models.ForeignKey("Owner", on_delete=models.SET_NULL,
                             null=True, blank=True)
 
     geometry = models.GeometryField(verbose_name=_("Geometry"),
@@ -30,3 +40,9 @@ class Farm(models.Model):
         ordering = ['id']
         verbose_name = _('Farm')
         verbose_name_plural = _('Farms')
+        constraints = [
+            CheckConstraint(check=Q(owner__isnull=False), name='owner_isnull'),
+            CheckConstraint(check=Q(municipality__isnull=False), name='municipality_isnull'),
+            CheckConstraint(check=Q(state__isnull=False), name='state_isnull'),
+            CheckConstraint(check=Q(name__isnull=False), name='name_isnull')
+        ]
